@@ -112,6 +112,40 @@
     -ms-transform: translateX(105%);
     transform: translateX(105%)
   }
+  .fixed-sn .double-nav,
+  .fixed-sn footer,
+  .fixed-sn main {
+    padding-left: 0px;
+  }
+}
+@media only screen and (min-width:600px) {
+  .fixed-sn .page-footer .container-fluid,
+  .fixed-sn main {
+    padding-left: 0px
+  }
+}
+@media only screen and (min-width:992px) {
+  .fixed-sn .page-footer .container-fluid,
+  .fixed-sn main {
+    padding-left: 0px
+  }
+}
+@media only screen and (min-width:1200px) {
+  .fixed-sn .page-footer .container-fluid,
+  .fixed-sn main {
+    padding-left: 0px
+  }
+}
+@media only screen and (min-width:1440px) {
+  a.button-collapse, a.navbar-brand {
+    display: none !important;
+  }
+
+  .fixed-sn .double-nav,
+  .fixed-sn footer,
+  .fixed-sn main {
+    padding-left: 15rem;
+  }
 }
 
 .side-nav .collapsible {
@@ -226,7 +260,7 @@
   height: auto
 }
 
-@media (max-height:992px) {
+@media only screen and (max-height:992px) {
   .side-nav .logo-wrapper {
     height: 80px
   }
@@ -684,7 +718,8 @@
   height: auto
 }
 
-@media (max-height:992px) {
+
+@media only screen and (max-width:992px) {
   .side-nav .logo-wrapper {
     height: 80px
   }

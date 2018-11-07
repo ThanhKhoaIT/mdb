@@ -57,3 +57,11 @@
   color: #fff;
   left: auto;
 }
+
+.navbar .breadcrumb .breadcrumb-item {
+  color: #666;
+}
+
+.navbar .breadcrumb .breadcrumb-item:before {
+  color: #666;
+}
