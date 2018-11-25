@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title= "Admin - #{strip_tags(yield(:mdb_title))}" rescue 'Admin'
+    %link{href: image_path('mdb/favicon.png'), rel: :icon}
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'mdb_admin', media: 'all'
+    = javascript_include_tag 'mdb_admin'
+  %body.fixed-sn
+    = render 'mdb/navbar'
+    = render 'mdb/menu'
+    %main
+      .container-fluid
+        = render 'mdb/alert'
+        = yield

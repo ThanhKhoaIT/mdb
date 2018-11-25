@@ -1,0 +1,13 @@
+- templates = { success: ['thumbs-o-up', 'success'], warning: ['exclamation-triangle', 'warning'], errors: ['thumbs-o-down', 'danger'] }
+
+- templates.each do |type, options|
+  - if flash[type]
+    .alert.alert-dismissible.fade.show{class: "alert-#{options.last}", role: :alert}
+      - if flash[type].is_a?(Array)
+        %strong= flash[type].first
+        = flash[type].last
+      - else
+        %strong.mr-2= mdb_icon options.first
+        = flash[type]
+      %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+        %span{"aria-hidden" => "true"} ×

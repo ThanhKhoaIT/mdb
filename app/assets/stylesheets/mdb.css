@@ -3,5 +3,8 @@
  *= require mdb/fonts
  *= require mdb/core
  *= require mdb/sidenav
+ *= require mdb/navbar
+ *= require mdb/dropdown
+ *= require mdb/paginate
  *= require mdb/modify
  */

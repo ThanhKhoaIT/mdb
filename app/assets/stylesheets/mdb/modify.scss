@@ -65,3 +65,21 @@
 .navbar .breadcrumb .breadcrumb-item:before {
   color: #666;
 }
+
+.nav-link a,
+.nav-item a {
+  color: #000;
+}
+
+.dropdown-toggle::after { content: none; }
+.dropdown-toggle i { margin-left: 5px; }
+a i + span { margin-left: 5px; }
+a span + i { margin-right: 5px; }
+
+.breadcrumb-dn {
+  padding: 0px 15px;
+
+  p {
+    margin-bottom: 0rem;
+  }
+}

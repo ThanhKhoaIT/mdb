@@ -1,0 +1,20 @@
+#slide-out.side-nav.fixed
+  %ul.custom-scrollbar
+    %li
+      .logo-wrapper.waves-light
+        = link_to root_path do
+          = image_tag 'mdb/logo.png', class: 'img-fluid flex-center', width: '80%', style: 'height: auto'
+    %li
+      %ul.collapsible.collapsible-accordion
+        = fallback_render 'mdb/admin_menu', 'is not implemented'
+        - if content_for :mdb_admin_menu
+          = yield :mdb_admin_menu
+
+  .sidenav-bg.rgba-blue-strong
+
+:javascript
+  $(".button-collapse").sideNav();
+  $(".collapsible li").collapsible({
+    arrowRclass: 'fa-angle-down',
+    arrowDclass: 'fa-angle-up',
+  });

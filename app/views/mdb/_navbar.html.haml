@@ -1,0 +1,10 @@
+%nav.navbar.fixed-top.navbar-toggleable-md.navbar-expand-lg.scrolling-navbar.double-nav
+  .float-left
+    %a.btn.btn-primary.p-3.button-collapse{'data-activates' => 'slide-out', href: '#'}
+      %i.fa.fa-bars
+  .breadcrumb-dn.mr-auto
+    = yield :mdb_title
+  %ul.nav.navbar-nav.nav-flex-icons.ml-auto
+    = yield :page_actions
+    = yield :mdb_admin_nav
+    = fallback_render 'mdb/admin_nav', 'is not implemented'

@@ -1,4 +1,7 @@
 //= require mdb/jquery
+//= require mdb/popper
+//= require mdb/bootstrap
+//= require mdb/collapsible
 //= require mdb/hammer
 //= require mdb/helpers
 //= require mdb/core

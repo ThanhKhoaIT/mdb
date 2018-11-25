@@ -1,3 +1,6 @@
+main {
+  padding-top: 80px;
+}
 .side-nav>ul {
   max-height: 100vh
 }
@@ -93,7 +96,7 @@
   -ms-transform: translateX(0);
   transform: translateX(0);
   position: fixed;
-  z-index: 998;
+  z-index: 1040;
 }
 
 .side-nav.fixed.right-aligned {
@@ -101,39 +104,31 @@
   left: auto
 }
 
-@media only screen and (max-width:1440px) {
-  .side-nav.fixed {
-    -webkit-transform: translateX(-105%);
-    -ms-transform: translateX(-105%);
-    transform: translateX(-105%)
-  }
-  .side-nav.fixed.right-aligned {
-    -webkit-transform: translateX(105%);
-    -ms-transform: translateX(105%);
-    transform: translateX(105%)
-  }
-  .fixed-sn .double-nav,
-  .fixed-sn footer,
-  .fixed-sn main {
-    padding-left: 0px;
-  }
-}
 @media only screen and (min-width:600px) {
   .fixed-sn .page-footer .container-fluid,
+  .fixed-sn .double-nav,
   .fixed-sn main {
     padding-left: 0px
   }
 }
 @media only screen and (min-width:992px) {
   .fixed-sn .page-footer .container-fluid,
+  .fixed-sn .double-nav,
   .fixed-sn main {
-    padding-left: 0px
+    padding-left: 15rem;
+  }
+  a.button-collapse {
+    display: none !important;
+  }
+  .side-nav.fixed {
+    transform: translateX(0%) !important;
   }
 }
 @media only screen and (min-width:1200px) {
   .fixed-sn .page-footer .container-fluid,
+  .fixed-sn .double-nav,
   .fixed-sn main {
-    padding-left: 0px
+    padding-left: 15rem;
   }
 }
 @media only screen and (min-width:1440px) {
@@ -160,7 +155,8 @@
 
 .side-nav .collapsible>li {
   -webkit-border-radius: 2px;
-  border-radius: 2px
+  border-radius: 2px;
+  position: relative;
 }
 
 .side-nav .collapsible>li a.collapsible-header:hover {
@@ -182,6 +178,10 @@
   font-size: .8rem;
   height: 36px;
   line-height: 36px
+}
+
+.side-nav .collapsible a span {
+  font-size: 1rem;
 }
 
 .side-nav .collapsible a.active,
@@ -241,36 +241,22 @@
   padding-bottom: 99999px
 }
 
+
 .side-nav .logo-wrapper {
-  border-bottom: 1px solid rgba(153, 153, 153, .3);
-  height: 8.75rem
+  border-bottom: 1px solid rgba(153, 153, 153, .7);
+  height: 6rem;
 }
 
 .side-nav .logo-wrapper a {
-  height: 8.75rem;
+  height: 6rem;
   width: 15rem;
   padding: 0
 }
 
 .side-nav .logo-wrapper img {
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 20%;
-  padding-bottom: 20%;
-  height: auto
-}
-
-@media only screen and (max-height:992px) {
-  .side-nav .logo-wrapper {
-    height: 80px
-  }
-  .side-nav .logo-wrapper a {
-    height: 80px
-  }
-  .side-nav .logo-wrapper img {
-    padding-top: 7%;
-    padding-bottom: 7%
-  }
+  height: 100%;
+  margin: 0px auto;
+  padding: 15px 0px;
 }
 
 .side-nav .logo-wrapper.sn-avatar-wrapper {
@@ -593,19 +579,6 @@
   left: auto
 }
 
-@media only screen and (max-width:1440px) {
-  .side-nav.fixed {
-    -webkit-transform: translateX(-105%);
-    -ms-transform: translateX(-105%);
-    transform: translateX(-105%)
-  }
-  .side-nav.fixed.right-aligned {
-    -webkit-transform: translateX(105%);
-    -ms-transform: translateX(105%);
-    transform: translateX(105%)
-  }
-}
-
 .side-nav .collapsible {
   margin: 0;
   padding: 0;
@@ -668,7 +641,8 @@
   padding-left: 20px
 }
 
-.side-nav .fa-angle-down.rotate-icon {
+.side-nav .fa-angle-down.rotate-icon,
+.side-nav .fa-angle-up.rotate-icon{
   position: absolute;
   right: 0;
   top: .8rem;
@@ -697,39 +671,6 @@
   z-index: -1;
   margin-bottom: -99999px;
   padding-bottom: 99999px
-}
-
-.side-nav .logo-wrapper {
-  border-bottom: 1px solid rgba(153, 153, 153, .3);
-  height: 8.75rem
-}
-
-.side-nav .logo-wrapper a {
-  height: 8.75rem;
-  width: 15rem;
-  padding: 0
-}
-
-.side-nav .logo-wrapper img {
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 20%;
-  padding-bottom: 20%;
-  height: auto
-}
-
-
-@media only screen and (max-width:992px) {
-  .side-nav .logo-wrapper {
-    height: 80px
-  }
-  .side-nav .logo-wrapper a {
-    height: 80px
-  }
-  .side-nav .logo-wrapper img {
-    padding-top: 7%;
-    padding-bottom: 7%
-  }
 }
 
 .side-nav .logo-wrapper.sn-avatar-wrapper {
@@ -966,3 +907,43 @@
   will-change: opacity
 }
 
+.side-nav .sidenav-bg.mask-strong:after,
+.side-nav .sidenav-bg:after {
+  background-color: rgba(121,121,121,.8);
+  width: 100%;
+  display: block;
+  content: "";
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
+
+.side-nav {
+  position: fixed;
+  width: 15rem;
+  left: 0;
+  top: 0;
+  margin: 0;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  height: 100%;
+  background-color: #2c2f34;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1040;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  will-change: transform;
+  backface-visibility: hidden;
+  padding: 0;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  background-image: url('https://mdbootstrap.com/img/Photos/Others/sidenav4.jpg');
+}
