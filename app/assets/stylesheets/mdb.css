@@ -6,5 +6,6 @@
  *= require mdb/navbar
  *= require mdb/dropdown
  *= require mdb/paginate
+ *= require mdb/select2
  *= require mdb/modify
  */

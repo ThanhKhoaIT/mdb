@@ -6,4 +6,5 @@
 //= require mdb/helpers
 //= require mdb/core
 //= require mdb/sidenav
+//= require mdb/select2
 //= require mdb/init
